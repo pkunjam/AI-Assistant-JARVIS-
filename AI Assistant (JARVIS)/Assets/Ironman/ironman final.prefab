@@ -4066,6 +4066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1024179114890066820}
   - component: {fileID: 5872318121345879380}
+  - component: {fileID: -7529394058092691647}
   m_Layer: 0
   m_Name: ironman final
   m_TagString: Untagged
@@ -4176,6 +4177,19 @@ MonoBehaviour:
   - {fileID: 5425757505521661455}
   - {fileID: 5425757504676224562}
   - {fileID: 5425757504207665108}
+  speed: 10
+--- !u!114 &-7529394058092691647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066122240376408471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4083c8099e38ed54d884eec2f3c3d112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 10
 --- !u!1 &4238872564550838043
 GameObject:
