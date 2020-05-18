@@ -5,10 +5,18 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-/[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+OpenCVForUnity
+Library
+Logs
+UserSettings
+Builds
+Obj
+Temp
+
+
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -56,7 +64,7 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-# *.apk
+*.apk
 *.unitypackage
 
 # Crashlytics generated file

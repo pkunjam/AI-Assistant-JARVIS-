@@ -3,7 +3,47 @@ guid: 6c701ea229af82d4799af32703fb6dee
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HD_Ironman_black
+    second: {fileID: 2100000, guid: 8e83bd4bb3fdd82408f91eba716539c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HD_Ironman_darksilver
+    second: {fileID: 2100000, guid: 8e83bd4bb3fdd82408f91eba716539c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HD_Ironman_red
+    second: {fileID: 2100000, guid: 8e83bd4bb3fdd82408f91eba716539c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HD_Ironman_silver
+    second: {fileID: 2100000, guid: 8e83bd4bb3fdd82408f91eba716539c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HD_Ironman_yellow
+    second: {fileID: 2100000, guid: 8e83bd4bb3fdd82408f91eba716539c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iron_man_leg_gold
+    second: {fileID: 2100000, guid: 8e83bd4bb3fdd82408f91eba716539c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iron_man_leg_red
+    second: {fileID: 2100000, guid: 8e83bd4bb3fdd82408f91eba716539c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 8e83bd4bb3fdd82408f91eba716539c7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
