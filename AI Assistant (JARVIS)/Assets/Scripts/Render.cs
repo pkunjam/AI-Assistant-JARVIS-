@@ -8,9 +8,10 @@ public class Render : MonoBehaviour
     public GameObject[] gameObjects = new GameObject[size];
     public float speed;
 
+
     void Start()
     {
-        StartCoroutine(MoveTargetToDestinations(gameObjects,speed));
+        StartCoroutine(MoveTargetToDestinations(gameObjects, speed));
     }
 
     IEnumerator MoveTargetToDestinations(GameObject[] gameObjects, float speed)

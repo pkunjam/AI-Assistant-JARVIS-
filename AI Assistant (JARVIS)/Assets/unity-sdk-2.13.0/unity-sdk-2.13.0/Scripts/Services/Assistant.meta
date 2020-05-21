@@ -1,6 +1,11 @@
 fileFormatVersion: 2
 guid: b11325cb79c565f42957792a676a9161
 folderAsset: yes
+<<<<<<< HEAD
+=======
+timeCreated: 1520272507
+licenseType: Free
+>>>>>>> IBM_Watson_SDK
 DefaultImporter:
   externalObjects: {}
   userData: 
