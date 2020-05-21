@@ -246,7 +246,7 @@ public class ExampleStreaming : MonoBehaviour
                         Holodeck.gameObject.SetActive(true);                      //Activates game object/s on Command. 
                     }
 
-                    if (text.Contains("open up") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("open") && State.Contains("Final")) // needs to be final or ECHO happens
                     {
                         StartCoroutine(ExampleTextToSpeech.I3_Open());
                         Planet.gameObject.SetActive(false);
@@ -273,10 +273,11 @@ public class ExampleStreaming : MonoBehaviour
 
                     }
 
-                    if (text.Contains("integrate") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("great") && State.Contains("Final")) // needs to be final or ECHO happens
                     {
                         StartCoroutine(ExampleTextToSpeech.I6_Color());
                         Deadshot.SetActive(true);
+                        StartCoroutine(MoveTarget.MoveTargetToDestinations(Deadshot));
                     }
 
                     if (text.Contains("blue") && State.Contains("Final")) // needs to be final or ECHO happens
@@ -289,7 +290,7 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(ExampleTextToSpeech.I8_Activate());
                     }
 
-                    if (text.Contains("ahead") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("yeah") && State.Contains("Final")) // needs to be final or ECHO happens
                     {
                         StartCoroutine(ExampleTextToSpeech.I9_Ahead());
                         Laser.gameObject.SetActive(true);

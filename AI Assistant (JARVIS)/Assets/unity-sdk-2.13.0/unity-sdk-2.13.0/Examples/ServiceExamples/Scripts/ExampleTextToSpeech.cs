@@ -81,57 +81,57 @@ public class ExampleTextToSpeech : MonoBehaviour
         {
             case 1:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">At your service, sir.</prosody></speak>";  // When the corresponding command is spoken, the assistant will respond with this phrase
-                Runnable.Run(Examples()); // Execute the TTS engine.
+                Runnable.Run(Jarvis()); // Execute the TTS engine.
                 SpeakState = 0;
                 break;
             case 2:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Working on a new project?</prosody></speak>";
-                Runnable.Run(Examples());
+                Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 3:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">With pleasure sir.</prosody></speak>";
-                Runnable.Run(Examples());
+                Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 4:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Sure thing.</prosody></speak>";
-                Runnable.Run(Examples());
+                Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 5:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Done. Sir, the project completion appears to be at 98%. Perhaps some enhancements?.</prosody></speak>";
-                Runnable.Run(Examples());
+                Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 6:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Excellent choice sir.</prosody></speak>";
-                Runnable.Run(Examples());
+                Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 7:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Excellent choice sir.</prosody></speak>";
-                Runnable.Run(Examples());
+                Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 8:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Hello Ritesh, what can I help you with?</prosody></speak>";
-                Runnable.Run(Examples());
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Hello Poonit, what can I help you with?</prosody></speak>";
+                Runnable.Run(Edith());
                 SpeakState = 0;
                 break;
             case 9:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Looks great, shall I export to the 3D printer?</prosody></speak>";
-                Runnable.Run(Examples());
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Looks great, shall I export it to the 3D printer?</prosody></speak>";
+                Runnable.Run(Edith());
                 SpeakState = 0;
                 break;
             case 10:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">You are most welcome!</prosody></speak>";
-                Runnable.Run(Examples());
+                Runnable.Run(Edith());
                 SpeakState = 0;
                 break;
             case 11:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">It seems like you are looking an Laser pointer, shall I integrate core components into the prototype.</prosody></speak>";
-                Runnable.Run(Examples());
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">It seems like you are looking at a Laser pointer, shall I integrate core components into the prototype?</prosody></speak>";
+                Runnable.Run(Edith());
                 SpeakState = 0;
                 break;
 
@@ -167,7 +167,7 @@ public class ExampleTextToSpeech : MonoBehaviour
 
         _service = new TextToSpeech(credentials);
 
-        Runnable.Run(Examples());
+        Runnable.Run(Jarvis());
     }
 
     public static IEnumerator I1_AreYouThere()  // Coroutines which sets the state machine. Each one cooresponds to the case statement above.
@@ -261,9 +261,152 @@ public class ExampleTextToSpeech : MonoBehaviour
     }
 
 
+    private IEnumerator Edith()
+    {
+
+        //  Synthesize
+        Log.Debug("ExampleTextToSpeech.Examples()", "Attempting synthesize.");
+        _service.Voice = VoiceType.en_US_Allison;  // Set your Voice here
+        _service.ToSpeech(HandleToSpeechCallback, OnFail, _testString, true);
+        while (!_synthesizeTested)
+            yield return null;
+
+        //	Get Voices
+        Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to get voices.");
+        _service.GetVoices(OnGetVoices, OnFail);
+        while (!_getVoicesTested)
+            yield return null;
+
+        //	Get Voice
+        Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to get voice {0}.", VoiceType.en_US_Allison);
+        _service.GetVoice(OnGetVoice, OnFail, VoiceType.en_US_Allison);
+        while (!_getVoiceTested)
+            yield return null;
+
+        //	Get Pronunciation
+        Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to get pronunciation of {0}", _testWord);
+        _service.GetPronunciation(OnGetPronunciation, OnFail, _testWord, VoiceType.en_US_Allison);
+        while (!_getPronuciationTested)
+            yield return null;
+
+        ////  Get Customizations
+        //Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to get a list of customizations");
+        //_service.GetCustomizations(OnGetCustomizations, OnFail);
+        //while (!_getCustomizationsTested)
+        //    yield return null;
+
+        ////  Create Customization
+        //Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to create a customization");
+        //_service.CreateCustomization(OnCreateCustomization, OnFail, _customizationName, _customizationLanguage, _customizationDescription);
+        //while (!_createCustomizationTested)
+        //    yield return null;
+
+        ////  Get Customization
+        //Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to get a customization");
+        //if (!_service.GetCustomization(OnGetCustomization, OnFail, _createdCustomizationId))
+        //    Log.Debug("ExampleTextToSpeech.Examples()", "Failed to get custom voice model!");
+        //while (!_getCustomizationTested)
+        //    yield return null;
+
+        //  Update Customization
+        Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to update a customization");
+        Word[] wordsToUpdateCustomization =
+        {
+            new Word()   // This code may not be neccesary 
+            {
+                word = "hello",
+                translation = "hullo"
+            },
+            new Word()
+            {
+                word = "goodbye",
+                translation = "gbye"
+            },
+            new Word()
+            {
+                word = "hi",
+                translation = "ohioooo"
+            }
+        };
+
+        _customVoiceUpdate = new CustomVoiceUpdate()
+        {
+            words = wordsToUpdateCustomization,
+            description = "My updated description",
+            name = "My updated name"
+        };
+
+        //if (!_service.UpdateCustomization(OnUpdateCustomization, OnFail, _createdCustomizationId, _customVoiceUpdate))
+        //    Log.Debug("ExampleTextToSpeech.Examples()", "Failed to update customization!");
+        //while (!_updateCustomizationTested)
+        //    yield return null;
+
+        ////  Get Customization Words
+        //Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to get a customization's words");
+        //if (!_service.GetCustomizationWords(OnGetCustomizationWords, OnFail, _createdCustomizationId))
+        //    Log.Debug("ExampleTextToSpeech.GetCustomizationWords()", "Failed to get {0} words!", _createdCustomizationId);
+        //while (!_getCustomizationWordsTested)
+        //    yield return null;
+
+        //  Add Customization Words
+        Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to add words to a customization");
+        Word[] wordArrayToAddToCustomization =
+        {
+            new Word()
+            {
+                word = "bananna",
+                translation = "arange"
+            },
+            new Word()
+            {
+                word = "orange",
+                translation = "gbye"
+            },
+            new Word()
+            {
+                word = "tomato",
+                translation = "tomahto"
+            }
+        };
+
+        Words wordsToAddToCustomization = new Words()
+        {
+            words = wordArrayToAddToCustomization
+        };
+
+        //if (!_service.AddCustomizationWords(OnAddCustomizationWords, OnFail, _createdCustomizationId, wordsToAddToCustomization))
+        //    Log.Debug("ExampleTextToSpeech.AddCustomizationWords()", "Failed to add words to {0}!", _createdCustomizationId);
+        //while (!_addCustomizationWordsTested)
+        //    yield return null;
+
+        ////  Get Customization Word
+        //Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to get the translation of a custom voice model's word.");
+        //string customIdentifierWord = wordsToUpdateCustomization[0].word;
+        //if (!_service.GetCustomizationWord(OnGetCustomizationWord, OnFail, _createdCustomizationId, customIdentifierWord))
+        //    Log.Debug("ExampleTextToSpeech.GetCustomizationWord()", "Failed to get the translation of {0} from {1}!", customIdentifierWord, _createdCustomizationId);
+        //while (!_getCustomizationWordTested)
+        //    yield return null;
+
+        ////  Delete Customization Word
+        //Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to delete customization word from custom voice model.");
+        //string wordToDelete = "goodbye";
+        //if (!_service.DeleteCustomizationWord(OnDeleteCustomizationWord, OnFail, _createdCustomizationId, wordToDelete))
+        //    Log.Debug("ExampleTextToSpeech.DeleteCustomizationWord()", "Failed to delete {0} from {1}!", wordToDelete, _createdCustomizationId);
+        //while (!_deleteCustomizationWordTested)
+        //    yield return null;
+
+        ////  Delete Customization
+        //Log.Debug("ExampleTextToSpeech.Examples()", "Attempting to delete a customization");
+        //if (!_service.DeleteCustomization(OnDeleteCustomization, OnFail, _createdCustomizationId))
+        //    Log.Debug("ExampleTextToSpeech.DeleteCustomization()", "Failed to delete custom voice model!");
+        //while (!_deleteCustomizationTested)
+        //    yield return null;
+        SpeakState = 0;
+        Log.Debug("ExampleTextToSpeech.Examples()", "Text to Speech examples complete.");
+    }
 
 
-    private IEnumerator Examples()
+    private IEnumerator Jarvis()
     {
 
         //  Synthesize
