@@ -9,10 +9,10 @@ public class MoveTarget : MonoBehaviour
     {
         while (true)
         {
-            if (Vector3.Distance(gameObject.transform.position, Vector3.zero) <= 0)
+            if (Vector3.Distance(gameObject.transform.localPosition, Vector3.zero) <= 0)
                 break;
 
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Vector3.zero, 5 * Time.deltaTime);
+            gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, Vector3.zero, 50 * Time.deltaTime);
             yield return null;
         }
     }
