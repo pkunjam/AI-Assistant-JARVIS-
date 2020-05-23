@@ -4065,7 +4065,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1024179114890066820}
-  - component: {fileID: 5872318121345879380}
   - component: {fileID: -7529394058092691647}
   m_Layer: 0
   m_Name: ironman final
@@ -4126,58 +4125,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5872318121345879380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4066122240376408471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b988b1dd0ada2cf4f8657a5fe3f81adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameObjects:
-  - {fileID: 5425757505378239855}
-  - {fileID: 5425757505050096926}
-  - {fileID: 5425757505116475840}
-  - {fileID: 5425757505170286809}
-  - {fileID: 5425757504606328368}
-  - {fileID: 5425757506171730300}
-  - {fileID: 5425757505503959609}
-  - {fileID: 5425757506012465842}
-  - {fileID: 5425757506289988684}
-  - {fileID: 5425757505266233165}
-  - {fileID: 5425757505966741511}
-  - {fileID: 5425757506227472880}
-  - {fileID: 5425757505120654190}
-  - {fileID: 5425757506173539081}
-  - {fileID: 5425757506064906258}
-  - {fileID: 5425757504426020538}
-  - {fileID: 5425757505453731530}
-  - {fileID: 5425757505883503351}
-  - {fileID: 5425757505747333396}
-  - {fileID: 5425757505959674376}
-  - {fileID: 5425757504222935536}
-  - {fileID: 5425757504525322759}
-  - {fileID: 5425757505610221429}
-  - {fileID: 5425757505163645031}
-  - {fileID: 5425757505963341959}
-  - {fileID: 5425757505688214153}
-  - {fileID: 5425757504996274827}
-  - {fileID: 5425757506069482608}
-  - {fileID: 5425757504558577142}
-  - {fileID: 5425757505301987451}
-  - {fileID: 5425757504620102214}
-  - {fileID: 5425757504265375933}
-  - {fileID: 5425757504455664035}
-  - {fileID: 5425757505140868086}
-  - {fileID: 5425757505176632756}
-  - {fileID: 5425757505521661455}
-  - {fileID: 5425757504676224562}
-  - {fileID: 5425757504207665108}
-  speed: 10
 --- !u!114 &-7529394058092691647
 MonoBehaviour:
   m_ObjectHideFlags: 0

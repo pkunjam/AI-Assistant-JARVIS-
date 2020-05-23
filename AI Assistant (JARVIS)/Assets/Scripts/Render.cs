@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Render : MonoBehaviour
 {
-    public static int size;
-    public GameObject[] gameObjects = new GameObject[size];
-    public float speed;
+    //public static int size;
+    //public GameObject[] gameObjects = new GameObject[size];
+    //public float speed;
 
 
-    void Start()
-    {
-        StartCoroutine(MoveTargetToDestinations(gameObjects, speed));
-    }
+    //void Start()
+    //{
+    //    StartCoroutine(MoveTargetToDestinations(gameObjects, speed));
+    //}
 
-    IEnumerator MoveTargetToDestinations(GameObject[] gameObjects, float speed)
+    public static IEnumerator MoveTargetToDestinations(GameObject[] gameObjects, float speed)
     {
         foreach (var gameObject in gameObjects)
         {
             while (true)
             {
-                if (Vector3.Distance(gameObject.transform.position, Vector3.zero) <= 0f)
+                if (Vector3.Distance(gameObject.transform.localPosition, Vector3.zero) <= 0f)
                     break;
 
-                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Vector3.zero, speed * Time.deltaTime);
+                gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, Vector3.zero, speed * Time.deltaTime);
                 yield return null;
             }
         }

@@ -42,7 +42,7 @@ public class ExampleTextToSpeech : MonoBehaviour
     #endregion
 
     TextToSpeech _service;
-    string _testString = "<speak version=\"1.0\"><prosody pitch=\"100Hz\">I am online and ready.</prosody></speak>";  // Test string which you can initialize with any phrase or sentence.
+    string _testString = "<speak version=\"1.0\"><prosody pitch=\"100Hz\">We're online and ready.</prosody></speak>";  // Test string which you can initialize with any phrase or sentence.
 
 
     string _createdCustomizationId;
@@ -80,12 +80,12 @@ public class ExampleTextToSpeech : MonoBehaviour
         switch (SpeakState)
         {
             case 1:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">At your service, sir.</prosody></speak>";  // When the corresponding command is spoken, the assistant will respond with this phrase
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">For you sir, always.</prosody></speak>";  // When the corresponding command is spoken, the assistant will respond with this phrase
                 Runnable.Run(Jarvis()); // Execute the TTS engine.
                 SpeakState = 0;
                 break;
             case 2:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Working on a new project?</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">We're online and ready.</prosody></speak>";
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
@@ -132,6 +132,51 @@ public class ExampleTextToSpeech : MonoBehaviour
             case 11:
                 _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">It seems like you are looking at a Laser pointer, shall I integrate core components into the prototype?</prosody></speak>";
                 Runnable.Run(Edith());
+                SpeakState = 0;
+                break;
+            case 12:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Shall I install this on the central database?</prosody></speak>";
+                Runnable.Run(Jarvis());
+                SpeakState = 0;
+                break;
+            case 13:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">As you wish.</prosody></speak>";
+                Runnable.Run(Jarvis());
+                SpeakState = 0;
+                break;
+            case 14:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Done.</prosody></speak>";
+                Runnable.Run(Jarvis());
+                SpeakState = 0;
+                break;
+            case 15:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">I have indeed been uploaded, Sir.</prosody></speak>";
+                Runnable.Run(Jarvis());
+                SpeakState = 0;
+                break;
+            case 16:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Importing preferences and calibrating virtual environments.</prosody></speak>";
+                Runnable.Run(Jarvis());
+                SpeakState = 0;
+                break;
+            case 17:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Yes, Shall I render using proposed specifications?</prosody></speak>";
+                Runnable.Run(Jarvis());
+                SpeakState = 0;
+                break;
+            case 18:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">The render is complete.</prosody></speak>";
+                Runnable.Run(Jarvis());
+                SpeakState = 0;
+                break;
+            case 19:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">I'll continue to run variations on the interface, will notify you if there are any developments.</prosody></speak>";
+                Runnable.Run(Jarvis());
+                SpeakState = 0;
+                break;
+            case 20:
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Enjoy yourself sir.</prosody></speak>";
+                Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
 
@@ -230,6 +275,7 @@ public class ExampleTextToSpeech : MonoBehaviour
 
     public static IEnumerator I8_Activate()
     {
+
         Debug.Log("activate");
         SpeakState = 8;
         Debug.Log("SpeakState" + SpeakState);
@@ -260,6 +306,80 @@ public class ExampleTextToSpeech : MonoBehaviour
         yield return null;
     }
 
+    public static IEnumerator I12_Mark()
+    {
+        Debug.Log("Mark");
+        SpeakState = 12;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
+
+    public static IEnumerator I13_Sure()
+    {
+        Debug.Log("Sure");
+        SpeakState = 13;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
+
+    public static IEnumerator I14_Home()
+    {
+        Debug.Log("Home");
+        SpeakState = 14;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
+
+    public static IEnumerator I15_Alright()
+    {
+        Debug.Log("Alright");
+        SpeakState = 15;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
+
+    public static IEnumerator I16_Start()
+    {
+        Debug.Log("Start");
+        SpeakState = 16;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
+
+    public static IEnumerator I17_metals()
+    {
+        Debug.Log("metals");
+        SpeakState = 17;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
+
+    public static IEnumerator I18_Complete()
+    {
+        yield return new WaitForSeconds(22);
+
+        Debug.Log("Complete");
+        SpeakState = 18;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
+
+    public static IEnumerator I19_Notify()
+    {
+        yield return new WaitForSeconds(25);
+        Debug.Log("Notify");
+        SpeakState = 19;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
+
+    public static IEnumerator I20_Enjoy()
+    {
+        Debug.Log("Enjoy");
+        SpeakState = 20;
+        Debug.Log("SpeakState" + SpeakState);
+        yield return null;
+    }
 
     private IEnumerator Edith()
     {

@@ -65,6 +65,11 @@ public class ExampleStreaming : MonoBehaviour
     public GameObject Glasses;
     public GameObject Deadshot;
     public GameObject Laser;
+    public GameObject Ironman;
+
+    [Header("Ironman Components")]
+    public GameObject[] ironObjects = new GameObject[38];
+
     public float speed = 10; // Rotation Speed
 
     private SpeechToText _service;
@@ -79,6 +84,7 @@ public class ExampleStreaming : MonoBehaviour
         Glasses.gameObject.SetActive(false);
         Deadshot.gameObject.SetActive(false);
         Laser.gameObject.SetActive(false);
+        Ironman.gameObject.SetActive(false);
     }
 
 
@@ -235,7 +241,7 @@ public class ExampleStreaming : MonoBehaviour
                     string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
 
-                    if (alt.transcript.Contains("are you") && State.Contains("Final")) // Does our transcipt contain the words "are you" and is the prediction final. 
+                    if (alt.transcript.Contains("you up") && State.Contains("Final")) // Does our transcipt contain the words "are you" and is the prediction final. 
                     {
                         StartCoroutine(ExampleTextToSpeech.I1_AreYouThere());       //When it detect these words it will execute a Coroutine in the Text to Speech script.
                     }
@@ -306,10 +312,49 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(ExampleTextToSpeech.I11_Looking());
                     }
 
+                    if (text.Contains("mark") && State.Contains("Final")) // I would like to open a new project file indexed as mark 2
+                    {
+                        StartCoroutine(ExampleTextToSpeech.I12_Mark());
+                    }
 
+                    if (text.Contains("sure") && State.Contains("Final")) // Sure
+                    {
+                        StartCoroutine(ExampleTextToSpeech.I13_Sure());
+                    }
 
+                    if (text.Contains("home interface") && State.Contains("Final")) // Import all components from home interface
+                    {
+                        StartCoroutine(ExampleTextToSpeech.I14_Home());
+                    }
 
+                    if (text.Contains("alright") && State.Contains("Final")) // Alright, What do you say?
+                    {
+                        StartCoroutine(ExampleTextToSpeech.I15_Alright());
+                    }
 
+                    if (text.Contains("start") && State.Contains("Final")) // Start the virtual walkaround
+                    {
+                        StartCoroutine(ExampleTextToSpeech.I16_Start());
+                        Ironman.gameObject.SetActive(true);
+                    }
+
+                    if (text.Contains("shell") && State.Contains("Final")) // Reconfigure shell metals and integrate all components while maintaining power to weight ratio
+                    {
+                        StartCoroutine(ExampleTextToSpeech.I17_metals());
+                    }
+
+                    if (text.Contains("yes") && State.Contains("Final")) // Yes
+                    {
+                        StartCoroutine(Render.MoveTargetToDestinations(ironObjects, 5));
+
+                        StartCoroutine(ExampleTextToSpeech.I18_Complete());
+                        StartCoroutine(ExampleTextToSpeech.I19_Notify());
+                    }
+
+                    if (text.Contains("buddy") && State.Contains("Final")) // Thanks buddy
+                    {
+                        StartCoroutine(ExampleTextToSpeech.I20_Enjoy());
+                    }
 
                     ResultsField.text = text;
                 }
