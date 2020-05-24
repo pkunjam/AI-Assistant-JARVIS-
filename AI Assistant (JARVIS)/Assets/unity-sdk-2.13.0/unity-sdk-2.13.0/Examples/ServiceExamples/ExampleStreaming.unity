@@ -866,9 +866,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5299c1c838a8c44b49ecc9254704e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: https://api.us-east.speech-to-text.watson.cloud.ibm.com/instances/3f256fd9-7829-4a93-afef-25d980f0c536
+  _serviceUrl: https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/f63fa237-ce07-4d0d-8533-8366ac9d881d
   ResultsField: {fileID: 1863902092}
-  _iamApikey: YTRLRJ8MZXZd-g5u2UwLaDs9BVM3F59x53PoZf7jZtJ1
+  _iamApikey: FhcXUidhRQxEFJ9LkXXiErOxlznOdoafv2WrVNtcWagE
   _recognizeModel: 
   Holodeck: {fileID: 1890366589}
   Planet: {fileID: 1890366593}
@@ -942,8 +942,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd939a6f78384e5898a22dda7832b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: https://api.us-east.text-to-speech.watson.cloud.ibm.com/instances/82e5be80-16ac-4b34-9235-c7cf16586d62
-  _iamApikey: 7pNiq2HCotPLWB3bS13zdfMdIrPcZk-rZTe1Y9oxegH4
+  _serviceUrl: https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/e20ad1ba-162a-47f6-a5e5-e91c00e2de35
+  _iamApikey: N-eFqQ1MJuEn218uulu58EOztY9bW3rvMwXs-qTVIiLu
+--- !u!1001 &1672136481
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1772147192650458, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_Name
+      value: ARCore Device
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772147192650458, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.509
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.461
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
 --- !u!1 &1863902089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,42 +1252,42 @@ PrefabInstance:
     - target: {fileID: 6379840620753780763, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 6.79499e-33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6379840620753780763, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.3563156e-19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6379840620753780763, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 2.9392982e+29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6379840620753780763, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 1.6842268e+22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6379840621080042480, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 6.271143e-39
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6379840621080042480, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 2.4023743e+20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6379840621080042480, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 805.6321
+      value: 4.5918e-41
       objectReference: {fileID: 0}
     - target: {fileID: 6379840621080042480, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 6.6016866e+31
+      value: 1.7675203e-28
       objectReference: {fileID: 0}
     - target: {fileID: 8569778619856998478, guid: 4ecb19e62499a144a965c78161ef06b6,
         type: 3}

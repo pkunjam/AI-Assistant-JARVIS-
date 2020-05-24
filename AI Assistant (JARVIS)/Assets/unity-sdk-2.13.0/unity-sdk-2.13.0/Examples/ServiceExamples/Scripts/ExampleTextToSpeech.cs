@@ -42,7 +42,7 @@ public class ExampleTextToSpeech : MonoBehaviour
     #endregion
 
     TextToSpeech _service;
-    string _testString = "<speak version=\"1.0\"><prosody pitch=\"100Hz\">We're online and ready.</prosody></speak>";  // Test string which you can initialize with any phrase or sentence.
+    string _testString = "<speak version=\"1.0\"><prosody pitch=\"100Hz\">Hello Poonit</prosody></speak>";  // Test string which you can initialize with any phrase or sentence.
 
 
     string _createdCustomizationId;
@@ -80,7 +80,7 @@ public class ExampleTextToSpeech : MonoBehaviour
         switch (SpeakState)
         {
             case 1:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">For you sir, always.</prosody></speak>";  // When the corresponding command is spoken, the assistant will respond with this phrase
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">For you sir? always.</prosody></speak>";  // When the corresponding command is spoken, the assistant will respond with this phrase
                 Runnable.Run(Jarvis()); // Execute the TTS engine.
                 SpeakState = 0;
                 break;
@@ -677,6 +677,7 @@ public class ExampleTextToSpeech : MonoBehaviour
 
     private void PlayClip(AudioClip clip)
     {
+
         if (Application.isPlaying && clip != null)
         {
             GameObject audioObject = new GameObject("AudioObject");
@@ -687,10 +688,12 @@ public class ExampleTextToSpeech : MonoBehaviour
             source.Play();
 
             Destroy(audioObject, clip.length);
-
             _synthesizeTested = true;
+
         }
     }
+
+
 
     private void OnGetVoices(Voices voices, Dictionary<string, object> customData = null)
     {
