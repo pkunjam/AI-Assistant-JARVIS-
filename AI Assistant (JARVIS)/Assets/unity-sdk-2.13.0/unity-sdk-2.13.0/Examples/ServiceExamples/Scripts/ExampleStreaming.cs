@@ -241,14 +241,14 @@ public class ExampleStreaming : MonoBehaviour
                     string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
 
-                    if (alt.transcript.Contains("you there") && State.Contains("Final")) // Does our transcipt contain the words "are you" and is the prediction final. 
+                    if (alt.transcript.Contains("are you") && State.Contains("Final")) // Jarvis you there? 
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I1_AreYouThere());       //When it detect these words it will execute a Coroutine in the Text to Speech script.
                         StartCoroutine(wait(4));
                     }
 
-                    if (text.Contains("design") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("design") && State.Contains("Final")) // Bring up design interface
                     {
                         StopRecording();
 
@@ -258,16 +258,16 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(wait(4));
                     }
 
-                    if (text.Contains("open") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("open up") && State.Contains("Final")) // open up project edith prototype
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I3_Open());
                         Planet.gameObject.SetActive(false);
                         Glasses.gameObject.SetActive(true);
-                        StartCoroutine(wait(4));
+                        StartCoroutine(wait(5));
                     }
 
-                    if (text.Contains("rotation") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if ((text.Contains("rotation")) && State.Contains("Final")) // pause rotation
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I4_Rotation());
@@ -282,14 +282,14 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(wait(3));
                     }
 
-                    if (text.Contains("status") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("status") && State.Contains("Final")) // Jarvis bring up status
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I5_Change());
                         StartCoroutine(wait(7));
                     }
 
-                    if (text.Contains("great") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("connect") && State.Contains("Final")) // Integrate deadshot module
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I6_Color());
@@ -298,19 +298,22 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(wait(5));
                     }
 
-                    if (text.Contains("blue") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("continue") && State.Contains("Final")) 
                     {
-                        //StartCoroutine(ExampleTextToSpeech.I7_red());
+                        if (rotate.speed == 0)
+                        {
+                            rotate.speed = 10;
+                        }
                     }
 
-                    if (text.Contains("activate") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("activate") && State.Contains("Final")) // Jarvis activate edith protocol
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I8_Activate());
                         StartCoroutine(wait(4));
                     }
 
-                    if (text.Contains("yeah") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("good") && State.Contains("Final")) // yeah, seems good idea
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I9_Ahead());
@@ -318,25 +321,26 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(wait(5));
                     }
 
-                    if (text.Contains("thanks") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("thanks") && State.Contains("Final")) // thanks edith
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I10_Thank());
                         StartCoroutine(wait(4));
                     }
 
-                    if (text.Contains("looking") && State.Contains("Final")) // needs to be final or ECHO happens
+                    if (text.Contains("some") && State.Contains("Final")) // hi edith could you suggest me some improvements on the deadshot module?
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I11_Looking());
                         StartCoroutine(wait(7));
                     }
 
-                    if (text.Contains("mark") && State.Contains("Final")) // I would like to open a new project file indexed as mark 2
+                    if (text.Contains("mark") && State.Contains("Final")) // Jarvis, I would like to open a new project file indexed as mark 2
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I12_Mark());
-                        StartCoroutine(wait(5));
+                        Holodeck.gameObject.SetActive(false);
+                        StartCoroutine(wait(4));
                     }
 
                     if (text.Contains("sure") && State.Contains("Final")) // Sure
@@ -346,18 +350,18 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(wait(3));
                     }
 
-                    if (text.Contains("interface") && State.Contains("Final")) // Import all components from home interface
+                    if (text.Contains("all") && State.Contains("Final")) // Import all components from home interface
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I14_Home());
                         StartCoroutine(wait(2));
                     }
 
-                    if (text.Contains("all right") && State.Contains("Final")) // Alright, What do you say?
+                    if (text.Contains("right") && State.Contains("Final")) // Alright, What do you say?
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I15_Alright());
-                        StartCoroutine(wait(4));
+                        StartCoroutine(wait(5));
                     }
 
                     if (text.Contains("start") && State.Contains("Final")) // Start the virtual walkaround
@@ -375,7 +379,7 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(wait(5));
                     }
 
-                    if (text.Contains("yes") && State.Contains("Final")) // Yes
+                    if (text.Contains("okay") && State.Contains("Final")) // Yes
                     {
                         StopRecording();
                         StartCoroutine(Render.MoveTargetToDestinations(ironObjects, 5));
@@ -385,7 +389,7 @@ public class ExampleStreaming : MonoBehaviour
                         StartCoroutine(wait(30));
                     }
 
-                    if (text.Contains("man") && State.Contains("Final")) // Thanks buddy
+                    if (text.Contains("man") && State.Contains("Final")) // Thanks man
                     {
                         StopRecording();
                         StartCoroutine(ExampleTextToSpeech.I20_Enjoy());

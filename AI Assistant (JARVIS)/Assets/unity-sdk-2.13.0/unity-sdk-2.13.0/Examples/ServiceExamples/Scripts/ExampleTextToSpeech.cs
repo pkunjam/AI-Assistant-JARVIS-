@@ -42,7 +42,7 @@ public class ExampleTextToSpeech : MonoBehaviour
     #endregion
 
     TextToSpeech _service;
-    string _testString = "<speak version=\"1.0\"><prosody pitch=\"100Hz\">Hello Poonit</prosody></speak>";  // Test string which you can initialize with any phrase or sentence.
+    string _testString = "<speak version=\"1.0\"><prosody pitch=\"100Hz\">Hello Poonit!</prosody></speak>";  // Test string which you can initialize with any phrase or sentence.
 
 
     string _createdCustomizationId;
@@ -80,92 +80,92 @@ public class ExampleTextToSpeech : MonoBehaviour
         switch (SpeakState)
         {
             case 1:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">For you sir? always.</prosody></speak>";  // When the corresponding command is spoken, the assistant will respond with this phrase
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">For you sir? Always.</prosody></speak>";  // Jarvis you there?
                 Runnable.Run(Jarvis()); // Execute the TTS engine.
                 SpeakState = 0;
                 break;
             case 2:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">We're online and ready.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">We're online and ready.</prosody></speak>"; // Bring up design interface
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 3:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">With pleasure sir.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">With pleasure sir.</prosody></speak>"; // open up project edith prototype
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 4:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Sure thing.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Sure thing.</prosody></speak>"; // pause rotation || continue
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 5:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Done. Sir, the project completion appears to be at 98%. Perhaps some enhancements?.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Done. Sir, the project completion appears to be at 98%. Perhaps some enhancements?.</prosody></speak>"; // Jarvis bring up status
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 6:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Excellent choice sir.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Excellent choice sir.</prosody></speak>"; // Integrate deadshot module
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 7:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Excellent choice sir.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Excellent choice sir.</prosody></speak>"; 
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 8:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Hello Poonit, what can I help you with?</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Hello Poonit, what can I help you with?</prosody></speak>"; // Jarvis activate edith protocol
                 Runnable.Run(Edith());
                 SpeakState = 0;
                 break;
             case 9:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Looks great, shall I export it to the 3D printer?</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Looks great, shall I export it to the 3D printer?</prosody></speak>"; // yeah, seems good idea
                 Runnable.Run(Edith());
                 SpeakState = 0;
                 break;
             case 10:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">You are most welcome!</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">You are most welcome!</prosody></speak>"; // thanks edith
                 Runnable.Run(Edith());
                 SpeakState = 0;
                 break;
             case 11:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">It seems like you are looking at a Laser pointer, shall I integrate core components into the prototype?</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">It seems installing laser pointer would be a good choice, shall I integrate core components into the prototype?</prosody></speak>"; // hi edith could you suggest me some improvements on the deadshot module?
                 Runnable.Run(Edith());
                 SpeakState = 0;
                 break;
             case 12:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Shall I install this on the central database?</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Shall I install this on the central database?</prosody></speak>"; // Jarvis, I would like to open a new project file indexed as mark 2
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 13:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">As you wish.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">As you wish.</prosody></speak>"; // Sure
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 14:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Done.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Done.</prosody></speak>"; // Import all components from home interface
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 15:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">I have indeed been uploaded, Sir.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">I have indeed been uploaded, Sir.</prosody></speak>"; // Alright, What do you say?
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 16:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Importing preferences and calibrating virtual environments.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Importing preferences and calibrating virtual environments.</prosody></speak>"; // Start the virtual walkaround
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 17:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Yes, Shall I render using proposed specifications?</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Yes, Shall I render using proposed specifications?</prosody></speak>"; // Reconfigure shell metals and integrate all components while maintaining power to weight ratio
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
             case 18:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">The render is complete.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">The render is complete.</prosody></speak>"; // Yes
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
@@ -175,7 +175,7 @@ public class ExampleTextToSpeech : MonoBehaviour
                 SpeakState = 0;
                 break;
             case 20:
-                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Enjoy yourself sir.</prosody></speak>";
+                _testString = "<speak version=\"1.0\"><prosody pitch=\"110Hz\">Enjoy yourself sir.</prosody></speak>"; // thanks man
                 Runnable.Run(Jarvis());
                 SpeakState = 0;
                 break;
