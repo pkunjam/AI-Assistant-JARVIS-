@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/unity-sdk-2.13.0/unity-sdk-2.13.0/Examples/ServiceExamples/ExampleStreaming.unity
+    path: Assets/IBM Watson/unity-sdk-2.13.0/Examples/ServiceExamples/ExampleStreaming.unity
     guid: 57c7b454bb032a34fa0f938231dba758
-  - enabled: 1
+  - enabled: 0
     path: Assets/GoogleARCore/Examples/HelloAR/Scenes/HelloAR.unity
     guid: e6a6fa04348cb45c9b0221eb19c946da
+  - enabled: 1
+    path: Assets/Scenes/JARVIS.unity
+    guid: aaf42d2b87fef1e4fac4699aabfaaa1d
   m_configObjects: {}
